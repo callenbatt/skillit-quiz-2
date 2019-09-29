@@ -4,7 +4,7 @@ This is a simple quiz application built in react using firebase services.
 
 ## Glossary
 
-The following terms are defined here for reference in the code base, as well as in general language usage. 
+The following terms are defined here for reference in the code base, as well as in general language usage. All references to glossary terms in the code are converted to camelCase.
 
 
 - **Users** may be one of two roles, **Teacher** and **Student**
@@ -68,7 +68,7 @@ The following terms are defined here for reference in the code base, as well as 
             Active ↴
 
             Analysis ↻
-            
+
     Complete
     
 
