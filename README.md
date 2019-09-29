@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Quiz App
 
-## Available Scripts
+This is a simple quiz application built in react using firebase services.
 
-In the project directory, you can run:
+## Glossary
 
-### `npm start`
+The following terms are defined here for reference in the code base, as well as in general language usage. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- **Users** may be one of two roles, **Teacher** and **Student**
 
-### `npm test`
+    - **Teachers** are responsible for designing and administering the quiz. They have access to both the **Admin** and **Giver** views.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - **Students** are participants in the quiz. They have access only to the **Taker** view.
 
-### `npm run build`
+- **Views** are single-page UIs which allow **Users** to interact with Quizes. 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - **Admin** allows **Teachers** to create, design, organize, administer, track, and review their quizes on their personal device. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+    - **Giver** allows **Teachers** to display the current quiz state to **Students** on a classroom device.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - **Taker** allows **Students** to participate in the quiz on their personal devices.
 
-### `npm run eject`
+- **Quizes** are collections of **Questions** given by **Teachers** to **Students**. Each **Quiz** contains to following properties:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    - **Questions** are simple questions **Teachers** ask **Students**, usually one sentence in length.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        - **Options** are a set of multiple choice answers to a given **Question**, usually one word in length and structured by "A", "B", "C", or "D" labels. **Students** can choose one option in a set.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+        - **Polls** are a collection of answers from **Students** to a given **Question**. Each item in the set contains a reference to a Student as well as their Option choice. 
+    
+    - **State** references the current activity in the **Quiz**, and controls the **Giver** & **Taker Views**.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+        - **Inactive** implies the quiz has not yet begun.
+            - Giver view is *inactive*
+            - Taker view is *inactive*
 
-## Learn More
+        - **Idle** implies the quiz is active, but no question is being asked.
+            - Giver view is *idle*
+            - Taker view is *idle*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        - **Ready** implies a question is about to become active.
+            - Giver view is *ready*
+            - Taker view is *ready*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        - **Active** implies the current question (by **QuestionIndex**) is active for the allotted time
+            - Giver view is *active*, and displays options and time
+            - Taker view is *active*, allows interaction to select option > confirm > confirm submission
 
-### Code Splitting
+        - **Analysis** implies the time has expired on the current question.
+            - Giver view is *analysis*, and displays statistics of the current question's poll
+            - Taker view is *analysis*, and displays personal statistics related to the current question's poll
+        
+        - **Complete** implies the current quiz is complete
+            - Giver view is *complete*
+            - Taker view is *complete*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    - **Question Index** references the current **Question** in the **Quiz**.
 
-### Analyzing the Bundle Size
+- **Lifecycle** refers to the sequece of events that take place during the time the **Quiz** takes place
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    graph LR
+    A-->B;
+    B-->C;
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
