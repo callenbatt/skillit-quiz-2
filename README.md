@@ -57,9 +57,13 @@ The following terms are defined here for reference in the code base, as well as 
 
     - **Question Index** references the current **Question** in the **Quiz**.
 
-- **Lifecycle** refers to the sequece of events that take place during the time the **Quiz** takes place
+- **Lifecycle** refers to the sequece of **State** events that take place during the **Quiz**
 
-    graph LR
-    A-->B;
-    B-->C;
+    Inactive ↴ 
+        Idle ↴
+            Ready ↴
+            Active ↴
+            Analysis ↻
+    Complete
+    
 
