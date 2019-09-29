@@ -59,11 +59,16 @@ The following terms are defined here for reference in the code base, as well as 
 
 - **Lifecycle** refers to the sequece of **State** events that take place during the **Quiz**
 
-    Inactive ↴ 
+    Inactive ↴
+
         Idle ↴
+
             Ready ↴
+
             Active ↴
+
             Analysis ↻
+            
     Complete
     
 
