@@ -1,6 +1,3 @@
-/**
- * TODO: display view to 'student' if 'state' is 'ready'
- */
 
 import React from 'react';
 import FirebaseContext from './../../firebase/context';
