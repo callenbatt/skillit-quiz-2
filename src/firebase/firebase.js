@@ -2,8 +2,9 @@ import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 
-// defined at root
-import { firebaseConfig } from '../../config';
+// define
+
+import firebaseConfig from './config';
 
 class Firebase {
     constructor() {

@@ -3,15 +3,12 @@
  */
 
 import React from 'react';
-import { FirebaseContext } from './../../../firebase';
 import './style.css';
 
-const Active = () => {
-
-    const { user, firebase } = React.useContext(FirebaseContext);
+const Active = ({ question }) => {
 
     return (
-        this //TODO
+        <div>{question.text}</div>
     );
 }
 

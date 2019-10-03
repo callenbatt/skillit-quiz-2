@@ -3,16 +3,13 @@
  */
 
 import React from 'react';
-import { FirebaseContext } from './../../../firebase';
 import './style.css';
 
-const Inactive = () => {
-
-    const { user, firebase } = React.useContext(FirebaseContext);
+const Idle = () => {
 
     return (
-        this //TODO
+        <div>The Quiz is currently Idle</div>
     );
 }
 
-export default Inactive;
+export default Idle;

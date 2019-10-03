@@ -11,7 +11,7 @@ const Active = () => {
     const { user, firebase } = React.useContext(FirebaseContext);
 
     return (
-        this //TODO
+        <div>Active</div>
     );
 }
 

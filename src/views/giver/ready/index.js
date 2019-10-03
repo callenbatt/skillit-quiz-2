@@ -3,15 +3,12 @@
  */
 
 import React from 'react';
-import { FirebaseContext } from './../../../firebase';
 import './style.css';
 
 const Ready = () => {
 
-    const { user, firebase } = React.useContext(FirebaseContext);
-
     return (
-        this //TODO
+        <div>Get ready to take the quiz</div>
     );
 }
 
